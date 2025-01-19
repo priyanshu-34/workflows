@@ -1,0 +1,42 @@
+name: Hit APIs Every 10 Minutes
+
+on:
+  schedule:
+    - cron: "*/10 * * * *" # Runs every 10 minutes
+  workflow_dispatch: 
+jobs:
+  hit-apis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Medium Blog
+        run: |
+          curl 'https://backend.priyans34.workers.dev/api/v1/blog/allblogs?pg=1' \
+            -H 'accept: */*' \
+            -H 'accept-language: en-US,en;q=0.9' \
+            -H 'origin: https://medium-serverless.onrender.com' \
+            -H 'priority: u=1, i' \
+            -H 'referer: https://medium-serverless.onrender.com/' \
+            -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+            -H 'sec-ch-ua-mobile: ?0' \
+            -H 'sec-ch-ua-platform: "macOS"' \
+            -H 'sec-fetch-dest: empty' \
+            -H 'sec-fetch-mode: cors' \
+            -H 'sec-fetch-site: cross-site' \
+            -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
+
+      - name: Hotel Booking
+        run: |
+          curl 'https://hotel-booking-uvov.onrender.com/api/users/register' \
+            -H 'accept: */*' \
+            -H 'accept-language: en-US,en;q=0.9' \
+            -H 'cookie: __stripe_mid=1b600e29-1582-4c11-ad1a-cab4476f07bab63183; __stripe_sid=1e29f5b9-7dfc-491f-a88c-040b8c9b69286e8eb1' \
+            -H 'priority: u=1, i' \
+            -H 'referer: https://hotel-booking-uvov.onrender.com/' \
+            -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+            -H 'sec-ch-ua-mobile: ?0' \
+            -H 'sec-ch-ua-platform: "macOS"' \
+            -H 'sec-fetch-dest: empty' \
+            -H 'sec-fetch-mode: cors' \
+            -H 'sec-fetch-site: same-origin' \
+            -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
