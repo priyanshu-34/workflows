@@ -9,21 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Medium Blog
-        run: |
-          curl 'https://backend.priyans34.workers.dev/api/v1/blog/allblogs?pg=1' \
-            -H 'accept: */*' \
-            -H 'accept-language: en-US,en;q=0.9' \
-            -H 'origin: https://medium-serverless.onrender.com' \
-            -H 'priority: u=1, i' \
-            -H 'referer: https://medium-serverless.onrender.com/' \
-            -H 'sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
-            -H 'sec-ch-ua-mobile: ?0' \
-            -H 'sec-ch-ua-platform: "macOS"' \
-            -H 'sec-fetch-dest: empty' \
-            -H 'sec-fetch-mode: cors' \
-            -H 'sec-fetch-site: cross-site' \
-            -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
 
       - name: Hotel Booking
         run: |
